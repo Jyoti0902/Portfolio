@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+:root {
+  --color-space-navy: #071A3D;
+  --color-space-dark: #15104A;
+  --color-space-purple: #6C3BFF;
+  --color-space-blue: #43C6FF;
+  --color-space-pink: #FF6FAE;
+  --color-space-yellow: #FFD166;
+  --color-space-white: #F8FAFF;
+  
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color-scheme: dark;
+}
+
+body {
+  background-color: #071A3D;
+  color: #F8FAFF;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #071A3D;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(108, 59, 255, 0.4);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(67, 198, 255, 0.6);
+}
+
+/* Font helpers */
+.font-outfit {
+  font-family: 'Outfit', sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Glassmorphism utilities */
+.glass-nav {
+  background: rgba(7, 26, 61, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(7, 26, 61, 0.37);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Text Gradients */
+.gradient-text {
+  background: linear-gradient(135deg, #6C3BFF 0%, #43C6FF 50%, #FF6FAE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-glow-purple {
+  box-shadow: 0 0 25px rgba(108, 59, 255, 0.45);
+}
+
+.gradient-glow-blue {
+  box-shadow: 0 0 25px rgba(67, 198, 255, 0.45);
+}
+
+/* Twinkle & float animations */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.25; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.25); }
+}
+
+.animate-twinkle {
+  animation: twinkle var(--twinkle-duration, 3s) infinite ease-in-out var(--twinkle-delay, 0s);
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+.animate-float-gentle {
+  animation: float-gentle 5s infinite ease-in-out;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.08); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 8s infinite ease-in-out;
+}
+
+/* Reduced motion query support */
+@media (prefers-reduced-motion: reduce) {
+  .animate-twinkle,
+  .animate-float-gentle,
+  .animate-pulse-glow {
+    animation: none !important;
+  }
+}
