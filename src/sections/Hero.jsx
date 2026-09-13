@@ -80,7 +80,7 @@ export default function Hero() {
 
           {/* Role Title with Gradient */}
           <motion.div variants={itemVariants}>
-            <h2 className="text-3xl sm:text-3xl lg:text-4xl font-semibold font-outfit tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold font-outfit tracking-tight">
               <span className="gradient-text">
                 Software Engineer
               </span>
