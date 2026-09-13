@@ -1,43 +1,54 @@
 import React, { useMemo } from 'react';
-import { motion } from 'framer-motion';
+import starChartImg from '../assets/star-chart.png';
+import marsImg from '../assets/mars.png';
+import metalPlanetImg from '../assets/metal-planet.png';
 
 export default function SpaceBackground() {
-  // Generate deterministic stars for consistency across renders
+  // Generate subtle stars with varied positions, sizes, and delays
   const stars = useMemo(() => {
     const starList = [];
-    const count = 75; // Optimal star count for crisp visual without noise
+    const count = 65;
     for (let i = 0; i < count; i++) {
       starList.push({
         id: i,
-        top: `${(i * 13.7) % 100}%`,
-        left: `${(i * 23.3) % 100}%`,
-        size: (i % 3 === 0) ? 3 : (i % 5 === 0) ? 4 : 2,
-        duration: 2 + (i % 4),
-        delay: (i % 5) * 0.7,
-        color: (i % 4 === 0) ? '#43C6FF' : (i % 7 === 0) ? '#FF6FAE' : (i % 11 === 0) ? '#FFD166' : '#F8FAFF',
-        opacity: 0.3 + ((i % 5) * 0.14)
+        top: `${(i * 17.3) % 100}%`,
+        left: `${(i * 29.1) % 100}%`,
+        size: (i % 4 === 0) ? 3 : (i % 7 === 0) ? 4 : 2,
+        duration: 2.5 + (i % 4),
+        delay: (i % 5) * 0.6,
+        color: (i % 3 === 0) ? '#43C6FF' : (i % 5 === 0) ? '#FF6FAE' : (i % 9 === 0) ? '#FFD166' : '#FFFFFF',
+        opacity: 0.25 + ((i % 5) * 0.15)
       });
     }
     return starList;
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none bg-gradient-to-b from-[#071A3D] via-[#0E1543] to-[#15104A]">
-      {/* Soft Nebula Glows */}
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none bg-[#071A3D]">
+      {/* Deep Space Radial Gradients */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(108,59,255,0.25),rgba(7,26,61,1))]" />
+      
+      {/* Star Chart Background Grid Texture */}
       <div 
-        className="absolute -top-[10%] -left-[10%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] rounded-full bg-[#6C3BFF]/20 blur-[130px] animate-pulse-glow" 
-      />
-      <div 
-        className="absolute top-[30%] -right-[10%] w-[55vw] h-[55vw] max-w-[650px] max-h-[650px] rounded-full bg-[#43C6FF]/15 blur-[140px] animate-pulse-glow" 
-        style={{ animationDelay: '2.5s' }}
-      />
-      <div 
-        className="absolute -bottom-[10%] left-[20%] w-[45vw] h-[45vw] max-w-[550px] max-h-[550px] rounded-full bg-[#FF6FAE]/15 blur-[130px] animate-pulse-glow" 
-        style={{ animationDelay: '4s' }}
+        className="absolute inset-0 opacity-15 mix-blend-screen bg-center bg-cover pointer-events-none"
+        style={{ backgroundImage: `url(${starChartImg})` }}
       />
 
-      {/* Subtle Space Dust / Particles Grid */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-[#071A3D]/40 to-[#071A3D]" />
+      {/* Soft Nebula Ambient Glows */}
+      <div className="absolute top-[-10%] left-[-10%] w-[55vw] h-[55vw] max-w-[700px] max-h-[700px] rounded-full bg-[#6C3BFF]/20 blur-[140px] animate-pulse-glow" />
+      <div className="absolute top-[35%] right-[-10%] w-[50vw] h-[50vw] max-w-[650px] max-h-[650px] rounded-full bg-[#43C6FF]/15 blur-[150px] animate-pulse-glow" style={{ animationDelay: '3s' }} />
+      <div className="absolute bottom-[-10%] left-[25%] w-[45vw] h-[45vw] max-w-[600px] max-h-[600px] rounded-full bg-[#FF6FAE]/15 blur-[140px] animate-pulse-glow" style={{ animationDelay: '5s' }} />
+
+      {/* Floating Real Planet Assets in Space */}
+      {/* Top Left Floating Metal Planet */}
+      <div className="absolute top-[10%] left-[3%] w-24 h-24 sm:w-36 sm:h-36 opacity-30 pointer-events-none animate-float-gentle hidden md:block">
+        <img src={metalPlanetImg} alt="" className="w-full h-full object-contain filter drop-shadow-[0_0_20px_rgba(67,198,255,0.3)]" />
+      </div>
+
+      {/* Bottom Right Floating Mars Planet */}
+      <div className="absolute bottom-[8%] right-[2%] w-32 h-32 sm:w-48 sm:h-48 opacity-35 pointer-events-none animate-float-gentle hidden lg:block" style={{ animationDelay: '2s' }}>
+        <img src={marsImg} alt="" className="w-full h-full object-contain filter drop-shadow-[0_0_30px_rgba(255,111,174,0.3)]" />
+      </div>
 
       {/* Twinkling Stars */}
       <div className="absolute inset-0">
@@ -57,40 +68,6 @@ export default function SpaceBackground() {
             }}
           />
         ))}
-      </div>
-
-      {/* Distant Vector Planets (Subtle background details) */}
-      {/* Top Left Soft Planet */}
-      <div className="absolute top-[12%] left-[4%] opacity-20 hidden md:block">
-        <svg width="90" height="90" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="35" fill="url(#planet-grad-1)" />
-          <ellipse cx="50" cy="50" rx="48" ry="12" stroke="#43C6FF" strokeWidth="2" transform="rotate(-20 50 50)" strokeDasharray="60 30" opacity="0.6" />
-          <defs>
-            <radialGradient id="planet-grad-1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(35 35) scale(50)">
-              <stop stopColor="#43C6FF" />
-              <stop offset="1" stopColor="#15104A" />
-            </radialGradient>
-          </defs>
-        </svg>
-      </div>
-
-      {/* Bottom Right Soft Pinkish Planet */}
-      <div className="absolute bottom-[10%] right-[3%] opacity-25 hidden md:block">
-        <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="60" cy="60" r="40" fill="url(#planet-grad-2)" />
-          <defs>
-            <radialGradient id="planet-grad-2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(45 45) scale(55)">
-              <stop stopColor="#FF6FAE" />
-              <stop offset="0.7" stopColor="#6C3BFF" />
-              <stop offset="1" stopColor="#071A3D" />
-            </radialGradient>
-          </defs>
-        </svg>
-      </div>
-
-      {/* Subtle Shooting Star */}
-      <div className="absolute top-[15%] right-[25%] pointer-events-none hidden lg:block opacity-60">
-        <div className="w-[120px] h-[1.5px] bg-gradient-to-r from-transparent via-[#43C6FF] to-white -rotate-[35deg] animate-shooting-star" />
       </div>
     </div>
   );
