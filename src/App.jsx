@@ -5,6 +5,7 @@ import Hero from './sections/Hero';
 import CrewProfile from './sections/CrewProfile';
 import SelectedMissions from './sections/SelectedMissions';
 import MissionSystems from './sections/MissionSystems';
+import MissionLog from './sections/MissionLog';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <CrewProfile />
         <SelectedMissions />
         <MissionSystems />
+        <MissionLog />
       </main>
     </div>
   );
