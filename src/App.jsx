@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
 import CrewProfile from './sections/CrewProfile';
 import SelectedMissions from './sections/SelectedMissions';
+import MissionSystems from './sections/MissionSystems';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Hero />
         <CrewProfile />
         <SelectedMissions />
+        <MissionSystems />
       </main>
     </div>
   );
