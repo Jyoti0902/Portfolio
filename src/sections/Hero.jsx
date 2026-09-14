@@ -40,12 +40,12 @@ export default function Hero() {
   };
 
   return (
-    <section 
+    <section
       id="home"
       className="relative min-h-[92vh] lg:min-h-screen pt-28 lg:pt-36 pb-16 flex items-center justify-center overflow-hidden z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
     >
       <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-6 items-center z-10">
-        
+
         {/* LEFT COLUMN: HERO TEXT CONTENT */}
         <motion.div
           variants={containerVariants}
@@ -71,7 +71,7 @@ export default function Hero() {
               <span>👋</span>
               <span>Hello, I'm</span>
             </motion.p>
-            
+
             <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-outfit text-white tracking-tight leading-tight">
               Jyoti
               <span className="inline-block text-[#FFD166] text-2xl sm:text-3xl ml-2 animate-bounce">✦</span>
@@ -105,32 +105,32 @@ export default function Hero() {
 
           {/* Social Links */}
           <motion.div variants={itemVariants} className="pt-6 flex items-center justify-center lg:justify-start gap-4 text-gray-400 border-t border-white/10 w-full max-w-lg">
-            <a 
-              href="https://linkedin.com" 
-              target="_blank" 
+            <a
+              href="https://linkedin.com"
+              target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
               className="p-3 rounded-full bg-white/5 border border-white/10 hover:border-[#43C6FF]/50 hover:text-[#43C6FF] transition-all duration-300 hover:scale-110"
             >
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
               </svg>
             </a>
 
-            <a 
-              href="https://github.com" 
-              target="_blank" 
+            <a
+              href="https://github.com"
+              target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
               className="p-3 rounded-full bg-white/5 border border-white/10 hover:border-[#FF6FAE]/50 hover:text-[#FF6FAE] transition-all duration-300 hover:scale-110"
             >
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
               </svg>
             </a>
 
-            <a 
-              href="mailto:contact@jyoti.dev" 
+            <a
+              href="mailto:contact@jyoti.dev"
               aria-label="Email"
               className="p-3 rounded-full bg-white/5 border border-white/10 hover:border-[#FFD166]/50 hover:text-[#FFD166] transition-all duration-300 hover:scale-110"
             >
@@ -154,7 +154,7 @@ export default function Hero() {
         >
           {/* Main Visual Container - Floating Blue Rocket */}
           <div className="relative w-full max-w-[420px] sm:max-w-[480px] lg:max-w-[520px] aspect-square flex items-center justify-center">
-            
+
             {/* Soft Ambient Radial Light Glow Behind Rocket */}
             <div className="absolute inset-8 rounded-full bg-gradient-to-tr from-[#43C6FF]/40 via-[#6C3BFF]/30 to-[#FF6FAE]/20 blur-3xl animate-pulse-glow" />
 
@@ -204,31 +204,28 @@ export default function Hero() {
             <span className="text-[11px] font-mono-code text-gray-400 mr-1 uppercase">Visual:</span>
             <button
               onClick={() => setActiveVisual('rocket')}
-              className={`px-3 py-1 rounded-full text-xs font-medium transition-all ${
-                activeVisual === 'rocket'
+              className={`px-3 py-1 rounded-full text-xs font-medium transition-all ${activeVisual === 'rocket'
                   ? 'bg-[#43C6FF] text-[#071A3D] font-bold shadow-md'
                   : 'text-gray-400 hover:text-white'
-              }`}
+                }`}
             >
               Blue Rocket
             </button>
             <button
               onClick={() => setActiveVisual('astronaut')}
-              className={`px-3 py-1 rounded-full text-xs font-medium transition-all ${
-                activeVisual === 'astronaut'
+              className={`px-3 py-1 rounded-full text-xs font-medium transition-all ${activeVisual === 'astronaut'
                   ? 'bg-[#6C3BFF] text-white font-semibold shadow-md'
                   : 'text-gray-400 hover:text-white'
-              }`}
+                }`}
             >
               Astronaut
             </button>
             <button
               onClick={() => setActiveVisual('cat')}
-              className={`px-3 py-1 rounded-full text-xs font-medium transition-all ${
-                activeVisual === 'cat'
+              className={`px-3 py-1 rounded-full text-xs font-medium transition-all ${activeVisual === 'cat'
                   ? 'bg-[#FF6FAE] text-white font-semibold shadow-md'
                   : 'text-gray-400 hover:text-white'
-              }`}
+                }`}
             >
               Space Cat
             </button>

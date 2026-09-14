@@ -2,6 +2,7 @@ import React from 'react';
 import SpaceBackground from './components/SpaceBackground';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
+import CrewProfile from './sections/CrewProfile';
 
 function App() {
   return (
@@ -12,9 +13,10 @@ function App() {
       {/* Floating Glassmorphism Navbar */}
       <Navbar />
 
-      {/* Hero / Mission Control Landing Section (Part 1 Goal) */}
+      {/* Main Sections */}
       <main className="relative z-10">
         <Hero />
+        <CrewProfile />
       </main>
     </div>
   );

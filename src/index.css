@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --color-space-navy: #071A3D;
-  --color-space-dark: #15104A;
-  --color-space-purple: #6C3BFF;
-  --color-space-blue: #43C6FF;
-  --color-space-pink: #FF6FAE;
-  --color-space-yellow: #FFD166;
-  --color-space-white: #F8FAFF;
+  --color-space-navy: #070F26;
+  --color-space-dark: #0F172A;
+  --color-space-purple: #6366F1;
+  --color-space-blue: #38BDF8;
+  --color-space-pink: #F472B6;
+  --color-space-yellow: #FBBF24;
+  --color-space-white: #F8FAFC;
   
   font-family: 'Plus Jakarta Sans', sans-serif;
   color-scheme: dark;
 }
 
 body {
-  background-color: #071A3D;
-  color: #F8FAFF;
+  background-color: #070F26;
+  color: #F8FAFC;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
@@ -26,14 +26,14 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #071A3D;
+  background: #070F26;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(108, 59, 255, 0.4);
+  background: rgba(99, 102, 241, 0.3);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(67, 198, 255, 0.6);
+  background: rgba(56, 189, 248, 0.5);
 }
 
 /* Font helpers */
@@ -47,62 +47,71 @@ body {
 
 /* Glassmorphism utilities */
 .glass-nav {
-  background: rgba(7, 26, 61, 0.65);
+  background: rgba(7, 15, 38, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 8px 32px 0 rgba(7, 26, 61, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
-.glass-pill {
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card-hover:hover {
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-color: rgba(56, 189, 248, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(7, 15, 38, 0.6);
 }
 
-/* Text Gradients */
+/* Elegant Text Gradients */
 .gradient-text {
-  background: linear-gradient(135deg, #6C3BFF 0%, #43C6FF 50%, #FF6FAE 100%);
+  background: linear-gradient(135deg, #FFFFFF 0%, #38BDF8 60%, #818CF8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.gradient-glow-purple {
-  box-shadow: 0 0 25px rgba(108, 59, 255, 0.45);
-}
-
-.gradient-glow-blue {
-  box-shadow: 0 0 25px rgba(67, 198, 255, 0.45);
+.gradient-text-accent {
+  background: linear-gradient(135deg, #818CF8 0%, #38BDF8 50%, #F472B6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Twinkle & float animations */
 @keyframes twinkle {
-  0%, 100% { opacity: 0.25; transform: scale(0.85); }
-  50% { opacity: 1; transform: scale(1.25); }
+  0%, 100% { opacity: 0.2; transform: scale(0.9); }
+  50% { opacity: 0.8; transform: scale(1.1); }
 }
 
 .animate-twinkle {
-  animation: twinkle var(--twinkle-duration, 3s) infinite ease-in-out var(--twinkle-delay, 0s);
+  animation: twinkle var(--twinkle-duration, 4s) infinite ease-in-out var(--twinkle-delay, 0s);
 }
 
 @keyframes float-gentle {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(1deg); }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
 }
 
 .animate-float-gentle {
-  animation: float-gentle 5s infinite ease-in-out;
+  animation: float-gentle 6s infinite ease-in-out;
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(1.08); }
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(1.05); }
 }
 
 .animate-pulse-glow {
-  animation: pulse-glow 8s infinite ease-in-out;
+  animation: pulse-glow 9s infinite ease-in-out;
 }
 
 /* Reduced motion query support */

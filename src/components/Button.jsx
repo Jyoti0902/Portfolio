@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
+import { ArrowRight } from 'lucide-react';
 
 export default function Button({
   children,
@@ -7,65 +7,40 @@ export default function Button({
   href,
   onClick,
   className = '',
-  icon,
+  icon: Icon,
   ...props
 }) {
-  const [isHovered, setIsHovered] = useState(false);
-
   const baseStyles =
-    'relative inline-flex items-center justify-center font-medium rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#43C6FF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#071A3D] cursor-pointer select-none';
+    'relative inline-flex items-center justify-center font-medium rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#38BDF8] cursor-pointer select-none';
 
-  if (variant === 'mission') {
+  if (variant === 'mission' || variant === 'primary') {
+    const Component = href ? 'a' : 'button';
     return (
-      <a
-        href={href || '#missions'}
+      <Component
+        href={href}
         onClick={onClick}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className={`${baseStyles} px-7 py-3.5 text-base text-white font-semibold shadow-lg bg-gradient-to-r from-[#6C3BFF] via-[#43C6FF] to-[#6C3BFF] bg-[length:200%_auto] hover:bg-right transition-all duration-500 hover:shadow-[0_0_30px_rgba(67,198,255,0.5)] border border-white/20 active:scale-95 ${className}`}
+        className={`${baseStyles} group px-6 py-3.5 text-sm sm:text-base text-white font-semibold shadow-lg bg-gradient-to-r from-[#6366F1] to-[#38BDF8] hover:shadow-[0_0_25px_rgba(56,189,248,0.4)] border border-white/20 active:scale-98 ${className}`}
         {...props}
       >
         <span className="relative z-10 flex items-center gap-2">
-          <span className="transition-transform duration-300 transform hover:rotate-12">
-            🚀
-          </span>
-          <span className="transition-all duration-300">
-            {isHovered ? 'Launch Mission' : 'Explore My Missions'}
-          </span>
-          <motion.span
-            animate={{ x: isHovered ? 4 : 0 }}
-            transition={{ duration: 0.2 }}
-            className="inline-block"
-          >
-            →
-          </motion.span>
+          <span>{children}</span>
+          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
         </span>
-      </a>
+      </Component>
     );
   }
 
-  if (variant === 'secondary') {
-    return (
-      <a
-        href={href || '#about'}
-        onClick={onClick}
-        className={`${baseStyles} px-7 py-3.5 text-base text-[#F8FAFF] font-medium glass-pill hover:bg-white/10 hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] active:scale-95 transition-all duration-300 ${className}`}
-        {...props}
-      >
-        <span className="flex items-center gap-2">
-          {children}
-        </span>
-      </a>
-    );
-  }
-
+  const Component = href ? 'a' : 'button';
   return (
-    <button
+    <Component
+      href={href}
       onClick={onClick}
-      className={`${baseStyles} px-6 py-3 text-sm text-white font-medium glass-pill hover:bg-white/10 ${className}`}
+      className={`${baseStyles} px-6 py-3.5 text-sm sm:text-base text-gray-200 font-medium bg-white/5 border border-white/10 hover:bg-white/10 hover:text-white hover:border-white/20 active:scale-98 transition-all duration-200 ${className}`}
       {...props}
     >
-      {children}
-    </button>
+      <span className="flex items-center gap-2">
+        {children}
+      </span>
+    </Component>
   );
 }
